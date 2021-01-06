@@ -1,7 +1,5 @@
 # SimpleBase
-##使用说明
-
->项目gradle
+## 使用说明
 ```
 allprojects {
 	repositories {
@@ -11,6 +9,6 @@ allprojects {
 }
   
 dependencies {
-	implementation 'com.github.LetMeOff:SimpleBase:Tag'
+	implementation 'com.github.LetMeOff:SimpleBase:v1.0.0'
 }
 ```
