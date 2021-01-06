@@ -1,4 +1,4 @@
-package com.zjh.baselibrary;
+package com.zjh.simpledemo;
 
 import org.junit.Test;
 
