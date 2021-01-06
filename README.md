@@ -2,6 +2,7 @@
 ##使用说明
 
 项目gradle
+```
 	allprojects {
 		repositories {
 			...
@@ -12,3 +13,4 @@
   dependencies {
 	        implementation 'com.github.LetMeOff:SimpleBase:Tag'
 	}
+```
