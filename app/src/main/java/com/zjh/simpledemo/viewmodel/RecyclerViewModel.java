@@ -60,7 +60,7 @@ public class RecyclerViewModel extends BaseViewModel {
      */
     public OnSingleClickListener onSingleClickListener = new OnSingleClickListener() {
         @Override
-        protected void onSingleClick(View view) {
+        public void onSingleClick(View view) {
             add();
         }
     };

@@ -32,6 +32,6 @@ public abstract class OnSingleClickListener implements View.OnClickListener {
      *
      * @param view view
      */
-    protected abstract void onSingleClick(View view);
+    public abstract void onSingleClick(View view);
 
 }
