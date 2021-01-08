@@ -4,8 +4,12 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 
+import com.zjh.simplebase.http.RetrofitManager;
 import com.zjh.simplebase.manager.ActivityManager;
 import com.zjh.simplebase.util.LogUtils;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * application 基类
@@ -28,15 +32,23 @@ public class BaseApplication extends Application {
      * @param application application
      */
     public static synchronized void initApplication(@NonNull Application application) {
-        LogUtils.e("初始化");
         //lifecycle
         application.registerActivityLifecycleCallbacks(ActivityManager.getInstance());
+        RetrofitManager.getInstance()
+                .setHeaders(getHeaders())
+                .initRetrofitManager("https://www.baidu.com");
     }
 
     @Override
     public void onTerminate() {
         super.onTerminate();
         unregisterActivityLifecycleCallbacks(ActivityManager.getInstance());
+    }
+
+    private static Map<String, String> getHeaders() {
+        HashMap<String, String> headersMap = new HashMap<>(16);
+        headersMap.put("header", "header");
+        return headersMap;
     }
 
 }
