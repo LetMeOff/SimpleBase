@@ -34,9 +34,9 @@
 
         <Button
             android:id="@+id/button"
+            onSingleClick="@{recyclerVM.onSingleClickListener}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{()->recyclerVM.add()}"
             android:text="添加数据"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

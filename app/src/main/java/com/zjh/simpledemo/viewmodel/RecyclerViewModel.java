@@ -1,6 +1,7 @@
 package com.zjh.simpledemo.viewmodel;
 
 import android.app.Application;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
@@ -8,6 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.zjh.simplebase.base.BaseViewModel;
 import com.zjh.simplebase.inter.OnItemClickInterface;
 import com.zjh.simplebase.util.LogUtils;
+import com.zjh.simplebase.util.OnSingleClickListener;
 import com.zjh.simpledemo.BR;
 import com.zjh.simpledemo.R;
 import com.zjh.simpledemo.model.MultiTypeInfo;
@@ -53,6 +55,19 @@ public class RecyclerViewModel extends BaseViewModel {
         dataList.postValue(list);
     }
 
+    /**
+     * 单次点击事件
+     */
+    public OnSingleClickListener onSingleClickListener = new OnSingleClickListener() {
+        @Override
+        protected void onSingleClick(View view) {
+            add();
+        }
+    };
+
+    /**
+     * item点击事件
+     */
     public OnItemClickInterface onItemClickInterface = (view, position) -> LogUtils.i("click position : " + position);
 
 }
