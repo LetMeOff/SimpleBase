@@ -4,9 +4,10 @@ import android.app.Application;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.zjh.simplebase.base.BaseViewModel;
+import com.zjh.simplebase.base.IBaseViewModel;
 import com.zjh.simplebase.inter.OnItemClickInterface;
 import com.zjh.simplebase.util.LogUtils;
 import com.zjh.simplebase.util.OnSingleClickListener;
@@ -22,7 +23,7 @@ import java.util.List;
  * @author zhujianhua
  * on 2021/1/8
  */
-public class RecyclerViewModel extends BaseViewModel {
+public class RecyclerViewModel extends AndroidViewModel implements IBaseViewModel {
 
     public MutableLiveData<List<RecyclerModel>> dataList = new MutableLiveData<>();
     public int recyclerBrId = BR.recyclerInfo;

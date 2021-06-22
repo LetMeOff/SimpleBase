@@ -39,7 +39,7 @@ public class ToastUtils {
 
     @SuppressLint("ShowToast")
     public void show(String text) {
-        Context context = ActivityManager.getInstance().getCurrentActivity();
+        Context context = ActivityManager.INSTANCE.getCurActivity();
         if (context == null) {
             LogUtils.e("context为null");
             return;
@@ -65,7 +65,7 @@ public class ToastUtils {
     public void show(@StringRes int resId) {
         String text;
         try {
-            Context context = ActivityManager.getInstance().getCurrentActivity();
+            Context context = ActivityManager.INSTANCE.getCurActivity();
             if (context == null) {
                 LogUtils.e("context为null");
                 return;

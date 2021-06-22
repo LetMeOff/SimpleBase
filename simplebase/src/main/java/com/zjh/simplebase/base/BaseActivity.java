@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.zjh.simplebase.util.StatusBarUtils;
@@ -18,7 +19,7 @@ import com.zjh.simplebase.util.StatusBarUtils;
  * @author zhujianhua
  * on 2021/1/6
  */
-public abstract class BaseActivity<Binding extends ViewDataBinding, VM extends BaseViewModel> extends AppCompatActivity {
+public abstract class BaseActivity<Binding extends ViewDataBinding, VM extends AndroidViewModel & IBaseViewModel> extends AppCompatActivity {
 
     protected Binding binding;
     protected VM viewModel;

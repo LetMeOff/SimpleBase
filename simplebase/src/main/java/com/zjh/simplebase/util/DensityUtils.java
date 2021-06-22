@@ -15,7 +15,7 @@ public class DensityUtils {
      * @return px值
      */
     public static int dp2px(final float dpValue) {
-        final float scale = ActivityManager.getInstance().getCurrentActivity().getResources().getDisplayMetrics().density;
+        final float scale = ActivityManager.INSTANCE.getCurActivity().getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
     }
 
@@ -26,7 +26,7 @@ public class DensityUtils {
      * @return dp值
      */
     public static int px2dp(final float pxValue) {
-        final float scale = ActivityManager.getInstance().getCurrentActivity().getResources().getDisplayMetrics().density;
+        final float scale = ActivityManager.INSTANCE.getCurActivity().getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }
 }

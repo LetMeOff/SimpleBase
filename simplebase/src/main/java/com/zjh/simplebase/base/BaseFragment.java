@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 /**
@@ -20,7 +21,7 @@ import androidx.lifecycle.ViewModelProvider;
  * @author zhujianhua
  * on 2021/1/6
  */
-public abstract class BaseFragment<Binding extends ViewDataBinding, VM extends BaseViewModel> extends Fragment {
+public abstract class BaseFragment<Binding extends ViewDataBinding, VM extends AndroidViewModel & IBaseViewModel> extends Fragment {
 
     protected Binding binding;
     protected VM viewModel;

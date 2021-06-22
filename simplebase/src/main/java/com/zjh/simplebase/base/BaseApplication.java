@@ -4,9 +4,7 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 
-import com.zjh.simplebase.http.RetrofitManager;
 import com.zjh.simplebase.manager.ActivityManager;
-import com.zjh.simplebase.util.LogUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,17 +30,12 @@ public class BaseApplication extends Application {
      * @param application application
      */
     public static synchronized void initApplication(@NonNull Application application) {
-        //lifecycle
-        application.registerActivityLifecycleCallbacks(ActivityManager.getInstance());
-        RetrofitManager.getInstance()
-                .setHeaders(getHeaders())
-                .initRetrofitManager("https://www.baidu.com");
+        ActivityManager.INSTANCE.init(application);
     }
 
     @Override
     public void onTerminate() {
         super.onTerminate();
-        unregisterActivityLifecycleCallbacks(ActivityManager.getInstance());
     }
 
     private static Map<String, String> getHeaders() {
